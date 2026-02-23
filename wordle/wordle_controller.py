@@ -13,7 +13,9 @@ class WordleController:
         curr_guess: str = ""
         while not model.game_over:
             model.add_color(curr_guess)
+            curr_state = model.curr_color()
             view.print_prev(model.guessed_words)
+            view.print_current_state(curr_state)
             curr_guess = view.give_answer()
             model.guess_word(curr_guess)
         
