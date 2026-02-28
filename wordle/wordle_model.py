@@ -98,7 +98,22 @@ class WordleModel:
         self.guessed_words.append(colored)
     
     def curr_color(self) -> list[tuple[str, WordState]]:
+<<<<<<< HEAD
         return [(x, self.guessed_letters[0][x]) for x in self._word_str]
+=======
+        counter: int = 0
+        guessed: list[str] = []
+        final: list[tuple[str, WordState]] = []
+        
+        for letter in self._word_str:
+            if guessed.count(letter) > counter:
+                counter += 1
+            guessed.append(letter)
+            final.append((letter, self.guessed_letters[counter][letter]))
+
+
+        return final
+>>>>>>> 34b4b5f07c0601b1c37c8732488c4f0538cafd4f
 
 
         

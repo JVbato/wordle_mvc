@@ -6,7 +6,7 @@ import random
 
 class WordleController:
     def run(self) -> None:
-        answer: str = "sissy"
+        answer: str = random.choice(list(word_bank))
         print(answer)
         model = WordleModel(6, answer)
         view = WordleView(answer, word_bank)
